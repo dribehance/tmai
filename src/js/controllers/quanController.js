@@ -1,0 +1,3 @@
+var quanController = function($scope) {
+	
+}

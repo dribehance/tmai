@@ -1,0 +1,129 @@
+// ----------------------------body   ---------------------------- //
+body {
+    font-family: "微软雅黑";
+    font-size: 12px !important;
+}
+
+.app {
+    background: #E4E4E4;
+}
+
+// ----------------------------h*   ---------------------------- //
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "微软雅黑";
+}
+
+// ----------------------------link   ---------------------------- //
+a:active,
+a:focus,
+button:active,
+button:focus,
+.btn.focus,
+.btn:focus {
+    outline: none !important;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+// ----------------------------section   ---------------------------- //
+.section-sm {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+// ----------------------------row   ---------------------------- //
+.col-condensed {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+// ----------------------------button   ---------------------------- //
+.rectangle {
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.border-radius-large {
+    -webkit-border-radius: 4px !important;
+    border-radius: 4px !important;
+}
+
+.bordered {
+    border: 1px solid;
+}
+
+.btn-default.active {
+    background: none;
+    border-color: @red;
+    color: @red;
+}
+
+.btn-group.justified.split-line {
+    >*:not(: first-child) {
+        border-left: 1px solid @lightGrey;
+    }
+}
+
+// ----------------------------form-control   ---------------------------- //
+.form-control {
+    &.flat {
+        border: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+// .ng-dirty input.ng-invalid.ng-dirty, input.ng-invalid.ng-dirty, textarea.ng-invalid.ng-dirty {
+//   border-color: @orange;
+// }
+// ----------------------------label   ---------------------------- //
+.normal {
+    font-weight: normal;
+}
+
+// ----------------------------modal   ---------------------------- //
+.modal-dialog.scrollable-dialog {
+    margin: 0;
+    height: 100%;
+    position: relative;
+    .modal-content {
+        height: 100%;
+    }
+    .modal-body {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+}
+
+// ----------------------------navbar off   ---------------------------- //
+.has-navbar-top.off-top .app-body {
+    padding-top: 0;
+}
+
+.has-navbar-top.off-top .navbar-absolute-top {
+    display: none;
+}
+.has-navbar-bottom.off-bottom .app-body {
+    padding-bottom: 0;
+}
+
+.has-navbar-bottom.off-bottom .navbar-absolute-bottom {
+    display: none;
+}

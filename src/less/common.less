@@ -1,0 +1,130 @@
+// ----------------------------text color---------------------------- //
+.text-white {
+	color: @white !important;
+}
+.text-black {
+	color: @black;
+}
+.text-grey {
+	color: @grey;
+}
+.text-red {
+	color: @red !important;
+}
+.text-success {
+	color:@green;
+}
+// ----------------------------text size---------------------------- //
+.text-very-large {
+	font-size: 30px;
+}
+.text-very-big {
+	font-size: 24px;
+}
+.text-large {
+	font-size: 16px;
+}
+.text-small {
+	font-size: 14px !important;
+}
+// ----------------------------text align---------------------------- //
+.text-center {
+	text-align: center;
+}
+.text-left {
+	text-align: left;
+}
+// ----------------------------text ellipsis---------------------------- //
+.text-ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.nowrap {
+	white-space: nowrap;
+}
+// ----------------------------bg   color---------------------------- //
+.bg-white {
+	background-color: white;
+}
+.bg-red {
+	background-color: @red;
+}
+.bg-grey {
+	background-color: @grey;
+}
+.bg-light-grey {
+	background-color: @lightGrey;
+}
+.bg-orange {
+	background-color: @orange;
+}
+// ----------------------------layout   ---------------------------- //
+.clearfixed {
+	&:before,&:after {
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+.block {
+	display: block;
+}
+.full-width {
+	width: 100%;
+}
+.semi-auto {
+	display: block;
+	position: relative;
+	min-height: 20px;
+	&.semi-icon-bar {
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+	&.semi-right-40 {
+		padding-right: 40px;
+	}
+	&.semi-left-50 {
+		padding-left: 50px;
+	}
+	&.semi-right-50 {
+		padding-right: 50px;
+	}
+	&.semi-left-70 {
+		padding-left: 70px;
+	}
+	&.semi-left-80 {
+		padding-left: 80px;
+	}
+	&.semi-right-80 {
+		padding-right: 80px;
+	}
+	.semi-wide-40 {
+		width: 40px;
+	}
+	.semi-wide-50 {
+		width: 50px;
+	}
+	.semi-wide-70 {
+		width: 70px;
+	}
+	.semi-wide-80 {
+		width: 80px;
+	}
+	.semi-fixed-left {
+		display: block;	
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.semi-fixed-right {
+		display: block;	
+		position: absolute;
+		right: 0;
+		top: 0;
+		&.semi-icon {
+			top: 4px;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+<div ui-content-for="title"></div>
+<div ui-content-for="navbarAction">
+    <div class="btn-group">
+        <span class="btn section-wide">
+			<i class="kk kk-weibo kk-20"></i>
+		</span>
+        <span class="btn section-wide">
+			<i class="kk kk-qzone kk-20"></i>
+		</span>
+        <span class="btn section-wide">
+			<i class="kk kk-friend kk-20-37"></i>
+		</span>
+    </div>
+</div>
+<div ui-content-for="backAction">
+    <a class="btn text-red" ng-click="back()">返回</a>
+</div>
+<div class="scrollable">
+    <div class="scrollable-content">
+        <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
+        slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
+            <div ng-repeat="banner in banners track by $index" on-repeat-done>
+                <img ng-src="{{banner}}" class="block full-width"></img>
+            </div>
+        </wrap-owlcarousel>
+        <div class="section text-ellipsis">
+            2015年春季新款女士短袖套装修身显瘦淑女百搭裙
+        </div>
+        <div class="section section-condensed">
+            商品价格：￥50.00
+            <div class="text-red">佣金：￥20.00</div>
+        </div>
+        <div class="section multi-image-text">
+            商品说明
+        </div>
+    </div>
+	<div class="scrollable-footer">
+		<div class="section text-center">
+			<a class="btn btn-primary bg-white text-red">立即购买</a>
+		</div>
+	</div>
+</div>
