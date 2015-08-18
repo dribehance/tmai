@@ -50,7 +50,28 @@ angular.module('Tmai', [
             templateUrl: 'about.html',
             reloadOnSearch: false,
             controller: aboutController
+        })
+        .when('/activities', {
+            templateUrl: 'activities.html',
+            reloadOnSearch: false,
+            controller: activitiesController
+        })
+        .when('/activities/:activity_id', {
+            templateUrl: 'activity.html',
+            reloadOnSearch: false,
+            controller: activityController
+        })
+        .when('/votes/:activity_id', {
+            templateUrl: 'votes.html',
+            reloadOnSearch: false,
+            controller: votesController
+        })
+        .when('/vote/:candicator_id', {
+            templateUrl: 'vote.html',
+            reloadOnSearch: false,
+            controller: voteController
         });
+        
 }).run(function(appServices){
     appServices.init();
 });
