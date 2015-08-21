@@ -1,9 +1,12 @@
 // EventHandle
-angular.module("Tmai").factory("appServices", function($rootScope, $location, $window, SharedState, errorServices, toastServices, config) {
+angular.module("Tmai").factory("appServices", function($rootScope, $location, $window,$routeParams, SharedState, errorServices, toastServices, config) {
     var routeChangeStart = function(e) {
         // userServices.checkAuth();
     }
     var routeChangeSuccess = function(e, currentRoute, prevRoute) {
+        if ($routeParams.token){
+            $rootScope.token = "c4d54c71e2a37602341e83d40e1237b2";
+        }
         toastServices.hide();
         errorServices.hide();
         navBarHandler(e, currentRoute, prevRoute);
@@ -14,8 +17,9 @@ angular.module("Tmai").factory("appServices", function($rootScope, $location, $w
     }
     var navBarHandler = function(e, currentRoute, prevRoute) {
         // navbar top
-        var _navbars_t = ["/bonus","/money"];
-        if (_navbars_t.contains($location.path())) {
+        // var _navbars_t = ["/bonus","/money"];
+        var path = $location.path();
+        if (path.indexOf("/bonus") != -1 || path.indexOf("/money") != -1) {
             // SharedState.turnOff("navbarTop");
             $rootScope.navbar.top = false;
         } else {
@@ -50,6 +54,8 @@ angular.module("Tmai").factory("appServices", function($rootScope, $location, $w
                 top:true,
                 bottom:false
             }
+            // static image
+            $rootScope.staticImageUrl = config.imageUrl;
             // backaction
             $rootScope.back = function() {
                 $window.history.back();

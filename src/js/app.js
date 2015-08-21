@@ -4,74 +4,77 @@ angular.module('Tmai', [
     // 'LocalStorageModule'
 ])
 
-.config(function($routeProvider) {
+.config(function($routeProvider,$httpProvider) {
     $routeProvider
-        .when('/', {
+        .when('/:token/', {
             templateUrl: 'home.html',
             reloadOnSearch: false,
-            controller: indexController
+            controller: indexController,
         })
-        .when('/product', {
+        .when('/:token/product', {
             templateUrl: 'product.html',
             reloadOnSearch: false,
             controller: productController
         })
-        .when('/wallet', {
+        .when('/:token/wallet', {
             templateUrl: 'wallet.html',
             reloadOnSearch: false,
             controller: walletController
         })
-        .when('/quan', {
+        .when('/:token/quan', {
             templateUrl: 'quan.html',
             reloadOnSearch: false,
             controller: quanController
         })
-        .when('/bonus', {
+        .when('/:token/bonus/:bonus_id', {
             templateUrl: 'bonus.html',
             reloadOnSearch: false,
             controller: bonusController
         })
-        .when('/money', {
+        .when('/:token/money', {
             templateUrl: 'money.html',
             reloadOnSearch: false,
             controller: moneyController
         })
-        .when('/record', {
+        .when('/:token/record', {
             templateUrl: 'record.html',
             reloadOnSearch: false,
             controller: recordController
         })
-        .when('/invite', {
+        .when('/:token/invite', {
             templateUrl: 'invite.html',
             reloadOnSearch: false,
             controller: inviteController
         })
-        .when('/about', {
+        .when('/:token/about', {
             templateUrl: 'about.html',
             reloadOnSearch: false,
             controller: aboutController
         })
-        .when('/activities', {
+        .when('/:token/activities', {
             templateUrl: 'activities.html',
             reloadOnSearch: false,
             controller: activitiesController
         })
-        .when('/activities/:activity_id', {
+        .when('/:token/activities/:activity_id', {
             templateUrl: 'activity.html',
             reloadOnSearch: false,
             controller: activityController
         })
-        .when('/votes/:activity_id', {
+        .when('/:token/votes/:activity_id', {
             templateUrl: 'votes.html',
             reloadOnSearch: false,
             controller: votesController
         })
-        .when('/vote/:candicator_id', {
+        .when('/:token/vote/:candicator_id', {
             templateUrl: 'vote.html',
             reloadOnSearch: false,
             controller: voteController
+        })
+        .otherwise({
+            redirectTo: "/index"
         });
-        
+        $httpProvider.interceptors.push('tokenInterceptor');   
 }).run(function(appServices){
     appServices.init();
 });

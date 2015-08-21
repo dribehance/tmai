@@ -16,13 +16,13 @@
 		<img ng-src="../images/bonus.png" class="block full-width" alt="">
 		<div class="section bg-light-grey text-center">
 			<div>累计佣金</div>
-			<span style="font-size:60px">28.88</span><span>元</span>
+			<span style="font-size:60px">{{total}}</span><span>元</span>
 			<div>已经存入余额，可用于购买</div>
 		</div>
-		<div class="section bg-light-grey text-center">
+		<div class="section bg-light-grey text-center" ng-if="moneys.length>0">
             ---- 已领取 ----
         </div>
-        <div>
+        <div ng-repeat="money in moneys">
             <div class="section">
                 <div class="semi-auto semi-left-50">
                     <div class="semi-fixed-left">
@@ -34,18 +34,21 @@
                                 <div class="text-ellipsis text-small">淘卖佣金</div>
                             </div>
                             <div class="col-xs-6 text-right">
-                                1.31元
+                                {{money.money}}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6 text-small">
-                                <div class="text-ellipsis">02-19</div>
+                                <div class="text-ellipsis">{{money.get_date}}</div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="kk-line kk-horizon"></div>
+        </div>
+        <div class="section text-center" ng-click="loadMore()">
+            {{ page.message}}
         </div>
 	</div>
 </div>

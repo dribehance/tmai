@@ -9,10 +9,10 @@
     <div class="scrollable-header">
         <div class="section">
             <div class="btn-group justified nav-tabs">
-                <a ng-href="#/wallet" class="btn btn-default">
+                <a ng-href="#/{{token}}/wallet" class="btn btn-default">
                     红包
                 </a>
-                <a ng-href="#/quan" class="btn btn-default active">
+                <a ng-href="#/{{token}}/quan" class="btn btn-default active">
                     优惠券
                 </a>
             </div>
@@ -20,84 +20,37 @@
 
     </div>
     <div class="scrollable-content">
-        <div>
+        <div ng-repeat="quan in quans">
             <div class="section">
                 <div class="semi-auto semi-left-50 semi-right-50">
                     <div class="semi-fixed-left">
-                        <img src="../images/quan.png" style="width:40px" alt="">
+                        <img ng-src="{{ staticImageUrl + quan.company_logo}}" style="width:40px" alt="">
                     </div>
                     <div class="section section-wide">
-                        美特斯邦威
+                        {{quan.company_name}}
                     </div>
                     <div class="semi-fixed-right">
-                        <i class="kk kk-quan kk-55-38 text-center text-white text-ellipsis" style="line-height:38px">￥50</i>
+                        <i class="kk kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':quan.type==0,'kk-quan':quan.type==1}">￥{{quan.money}}</i>
                     </div>
                 </div>
             </div>
             <div class="kk-line kk-horizon"></div>
         </div>
-        <div>
-            <div class="section">
-                <div class="semi-auto semi-left-50 semi-right-50">
-                    <div class="semi-fixed-left">
-                        <img src="../images/quan.png" style="width:40px" alt="">
-                    </div>
-                    <div class="section section-wide text-red">
-                        全平台通用
-                    </div>
-                    <div class="semi-fixed-right">
-                        <i class="kk kk-quan-all kk-55-38 text-center text-white text-ellipsis" style="line-height:38px">￥50</i>
-                    </div>
-                </div>
-            </div>
-            <div class="kk-line kk-horizon"></div>
-        </div>
-        <div class="section bg-light-grey text-center">
+        
+        <div class="section bg-light-grey text-center" ng-if="quans_expired.length>0">
             ---- 已领取 ----
         </div>
-        <div>
+        <div ng-repeat="expired in quans_expired">
             <div class="section">
                 <div class="semi-auto semi-left-50 semi-right-50">
                     <div class="semi-fixed-left">
-                        <img src="../images/quan.png" style="width:40px" alt="">
+                        <img ng-src="{{staticImageUrl + expired.company_logo}}" style="width:40px" alt="">
                     </div>
                     <div class="section section-wide">
-                        美特斯邦威
+                        {{expired.company_name}}
                     </div>
                     <div class="semi-fixed-right">
-                        <i class="kk kk-quan expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px">￥50</i>
-                    </div>
-                </div>
-            </div>
-            <div class="kk-line kk-horizon"></div>
-        </div>
-        <div>
-            <div class="section">
-                <div class="semi-auto semi-left-50 semi-right-50">
-                    <div class="semi-fixed-left">
-                        <img src="../images/quan.png" style="width:40px" alt="">
-                    </div>
-                    <div class="section section-wide">
-                        美特斯邦威
-                    </div>
-                    <div class="semi-fixed-right">
-                        <i class="kk kk-quan expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px">￥50</i>
-                    </div>
-                </div>
-            </div>
-            <div class="kk-line kk-horizon"></div>
-        </div>
-        <div>
-            <div class="section">
-                <div class="semi-auto semi-left-50 semi-right-50">
-                    <div class="semi-fixed-left">
-                        <img src="../images/quan.png" style="width:40px" alt="">
-                    </div>
-                    <div class="section section-wide text-red">
-                        全平台通用
-                    </div>
-                    <div class="semi-fixed-right">
-                        <i class="kk kk-quan-all expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px">￥50</i>
+                        <i class="kk expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':quan.type==0,'kk-quan':quan.type==1}">￥{{expired.money}}</i>
                     </div>
                 </div>
             </div>
