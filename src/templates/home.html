@@ -1,13 +1,33 @@
 <!-- by dribehance <dribehance.kksdapp.com> -->
-<div ui-content-for="title">淘卖</div>
+<div ui-content-for="title"></div>
 <div ui-content-for="navbarAction"></div>
 <div ui-content-for="backAction">
     <span class="btn"></span>
 </div>
 <div class="scrollable">
     <div class="scrollable-content">
-        <div class="btn-group justified">
-            <a ng-href="#/{{token}}/product" class="btn btn-primary">商品详情</a>
+        <div class="text-center" style="font-size:100px;">I'M TMAI</div>
+        <h3>URL PATTER</h3>
+        <div>
+            产品详情：/:token/products/:product_id
+        </div>
+        <p></p>
+        <h4>我的卡包</h4>
+        <div>
+            红包列表：/:token/wallet
+        </div>
+        <div>
+            优惠券列表：/:token/quan
+        </div>
+        <p></p>
+        <div>
+            活动详情：/:token/activities/:activity_id
+        </div>
+        <div>
+            关于我们：/:token/about/:company_id
+        </div>
+        <!-- <div class="btn-group justified">
+            <a ng-href="#/{{token}}/products/1" class="btn btn-primary">商品详情</a>
             <a ng-href="#/{{token}}/wallet/" class="btn btn-primary">我的卡包</a>
             <a ng-href="#/{{token}}/money" class="btn btn-primary">我的佣金</a>
             <a ng-href="#/{{token}}/record" class="btn btn-primary">交易记录</a>
@@ -17,8 +37,8 @@
         </div>
         <div class="btn-group justified">
             <a ng-href="#/{{token}}/invite" class="btn btn-primary">我的邀请码</a>
-            <a ng-href="#/{{token}}/about" class="btn btn-primary">关于我们</a>
+            <a ng-href="#/{{token}}/about/1" class="btn btn-primary">关于我们</a>
             <a ng-href="#/{{token}}/activities" class="btn btn-primary">活动</a>
-        </div>
+        </div> -->
     </div>
 </div>

@@ -19,19 +19,20 @@
     <div class="scrollable-content">
         <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
         slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
-            <div ng-repeat="banner in banners track by $index" on-repeat-done>
+            <div ng-repeat="banner in banners track by $index" style="min-height:150px" on-repeat-done>
                 <img ng-src="{{banner}}" class="block full-width"></img>
+                <!-- <imageview src="banner" grid="1" rate="1"></imageview> -->
             </div>
         </wrap-owlcarousel>
         <div class="section text-ellipsis">
-            2015年春季新款女士短袖套装修身显瘦淑女百搭裙
+            {{product.title}}
         </div>
         <div class="section section-condensed">
-            商品价格：￥50.00
-            <div class="text-red">佣金：￥20.00</div>
+            商品价格：{{product.price | currency:"￥"}}
+            <div class="text-red">佣金：{{product.commission | currency:"￥"}}</div>
         </div>
-        <div class="section multi-image-text">
-            商品说明
+        <div class="section multi-image-text" ng-repeat="image in images">
+            <img ng-src="{{staticImageUrl + image.cover}}" alt="">
         </div>
     </div>
 	<div class="scrollable-footer">

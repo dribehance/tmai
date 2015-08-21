@@ -5,7 +5,7 @@ angular.module("Tmai").factory("appServices", function($rootScope, $location, $w
     }
     var routeChangeSuccess = function(e, currentRoute, prevRoute) {
         if ($routeParams.token){
-            $rootScope.token = "c4d54c71e2a37602341e83d40e1237b2";
+            $rootScope.token = "8c6f599d3a7ba4170720df87de25d771";
         }
         toastServices.hide();
         errorServices.hide();

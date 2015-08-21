@@ -11,7 +11,7 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: indexController,
         })
-        .when('/:token/product', {
+        .when('/:token/products/:product_id', {
             templateUrl: 'product.html',
             reloadOnSearch: false,
             controller: productController
@@ -46,7 +46,7 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: inviteController
         })
-        .when('/:token/about', {
+        .when('/:token/about/:company_id', {
             templateUrl: 'about.html',
             reloadOnSearch: false,
             controller: aboutController
@@ -66,10 +66,15 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: votesController
         })
-        .when('/:token/vote/:candicator_id', {
+        .when('/:token/vote/:candidate_id', {
             templateUrl: 'vote.html',
             reloadOnSearch: false,
             controller: voteController
+        })
+        .when('/:token/vote_result/:activity_id', {
+            templateUrl: 'vote_result.html',
+            reloadOnSearch: false,
+            controller: voteResultController
         })
         .otherwise({
             redirectTo: "/index"

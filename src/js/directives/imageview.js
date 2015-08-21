@@ -10,17 +10,17 @@ angular.module('Tmai').directive('imageview', function() {
 			var viewport = {
 				width:elem.parent().width()
 			}
-			
 			var style = {
 				display:"inline-block",
 				overflow:"hidden",
 				"vertical-align":"top",
 				"text-align":"center",
-				width:(viewport.width-10)/attrs.grid +"px",
+				width:viewport.width/attrs.grid +"px",
 				height:viewport.width/attrs.grid * attrs.rate +"px",
-				"background-image":"url('../images/Qzone.png')",
+				"background-image":"url('../images/default.png')",
 				"background-repeat":"no-repeat",
-				"background-position":"center center"
+				"background-position":"center center",
+				"background-color":"#c8c8c8"
 
 			}
 			elem.children("img").bind("load",function() {

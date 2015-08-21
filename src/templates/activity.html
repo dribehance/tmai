@@ -2,17 +2,20 @@
 <div ui-content-for="title">活动介绍</div>
 <div ui-content-for="navbarAction"></div>
 <div ui-content-for="backAction">
-	<span class="btn" ng-click="back()">返回</span>
+    <span class="btn" ng-click="back()">返回</span>
 </div>
 <div class="scrollable">
-	<div class="scrollable-content">
-		<div class="section">
-			活动介绍Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum quaerat recusandae necessitatibus nesciunt, officiis voluptatibus saepe nihil ut temporibus! Quam expedita accusamus vitae deleniti rem obcaecati eligendi quo atque magni?
-		</div>
-	</div>
-	<div class="scrollable-footer">
-		<div class="section bg-grey">
-			<a ng-href="#/{{token}}/votes/1" class="block full-width text-white text-center">去投票</a>
-		</div>
-	</div>
+    <div class="scrollable-content">
+        <div class="section">
+            {{activity.details}}
+        </div>
+    </div>
+    <div class="scrollable-footer">
+        <div class="bg-grey">
+            <div class="btn-group justified text-white">
+                <a ng-href="#/{{token}}/votes/{{activity.activity_id}}" class="btn text-white text-center">去投票</a>
+                <a ng-href="#/{{token}}/vote_result/{{activity.activity_id}}" class="btn text-white text-center">查看看投票结果</a>
+            </div>
+        </div>
+    </div>
 </div>
