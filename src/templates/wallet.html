@@ -9,10 +9,10 @@
     <div class="scrollable-header">
         <div class="section">
             <div class="btn-group justified nav-tabs">
-                <a ng-href="#/{{token}}/wallet" class="btn btn-default active">
+                <a ng-href="#/{{platform}}/{{token}}/wallet" class="btn btn-default active">
                     红包
                 </a>
-                <a ng-href="#/{{token}}/quan" class="btn btn-default">
+                <a ng-href="#/{{platform}}/{{token}}/quan" class="btn btn-default">
                     优惠券
                 </a>
             </div>
@@ -23,7 +23,7 @@
         <div class="section" ng-repeat="bonus in bonus_newly">
             <div class="wallet wallet-outer">
                 <div class="wallet-inner">
-                    <a ng-href="#/{{token}}/bonus/{{bonus.bribery_id}}" class="block section bg-orange">
+                    <a ng-href="#/{{platform}}/{{token}}/bonus/{{bonus.bribery_id}}" class="block section bg-orange">
                         <div class="semi-auto semi-left-50">
                             <div class="semi-fixed-left">
                                 <img src="../images/bonus_4.png" style="width:40px" alt="">
@@ -53,7 +53,7 @@
                                 <div class="text-ellipsis text-small">淘卖红包</div>
                             </div>
                             <div class="col-xs-6 text-right">
-                                {{expired.money}}
+                                {{expired.money}}元
                             </div>
                         </div>
                         <div class="row">

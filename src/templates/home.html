@@ -9,36 +9,36 @@
         <div class="text-center" style="font-size:100px;">I'M TMAI</div>
         <h3>URL PATTER</h3>
         <div>
-            产品详情：/:token/products/:product_id
+            产品详情：/{ios|android}/:token/products/:product_id
         </div>
         <p></p>
         <h4>我的卡包</h4>
         <div>
-            红包列表：/:token/wallet
+            红包列表：/{ios|android}/:token/wallet
         </div>
         <div>
-            优惠券列表：/:token/quan
+            优惠券列表：/{ios|android}/:token/quan
         </div>
         <p></p>
         <div>
-            活动详情：/:token/activities/:activity_id
+            活动详情：/{ios|android}/:token/activities/:activity_id
         </div>
         <div>
-            关于我们：/:token/about/:company_id
+            关于我们：/{ios|android}/:token/about/:company_id
         </div>
         <!-- <div class="btn-group justified">
-            <a ng-href="#/{{token}}/products/1" class="btn btn-primary">商品详情</a>
-            <a ng-href="#/{{token}}/wallet/" class="btn btn-primary">我的卡包</a>
-            <a ng-href="#/{{token}}/money" class="btn btn-primary">我的佣金</a>
-            <a ng-href="#/{{token}}/record" class="btn btn-primary">交易记录</a>
+            <a ng-href="#/{{platform}}/{{token}}/products/1" class="btn btn-primary">商品详情</a>
+            <a ng-href="#/{{platform}}/{{token}}/wallet/" class="btn btn-primary">我的卡包</a>
+            <a ng-href="#/{{platform}}/{{token}}/money" class="btn btn-primary">我的佣金</a>
+            <a ng-href="#/{{platform}}/{{token}}/record" class="btn btn-primary">交易记录</a>
         </div>
         <div class="btn-group justified">
-            <a ng-href="#/{{token}}/record" class="btn btn-primary">交易记录</a>
+            <a ng-href="#/{{platform}}/{{token}}/record" class="btn btn-primary">交易记录</a>
         </div>
         <div class="btn-group justified">
-            <a ng-href="#/{{token}}/invite" class="btn btn-primary">我的邀请码</a>
-            <a ng-href="#/{{token}}/about/1" class="btn btn-primary">关于我们</a>
-            <a ng-href="#/{{token}}/activities" class="btn btn-primary">活动</a>
+            <a ng-href="#/{{platform}}/{{token}}/invite" class="btn btn-primary">我的邀请码</a>
+            <a ng-href="#/{{platform}}/{{token}}/about/1" class="btn btn-primary">关于我们</a>
+            <a ng-href="#/{{platform}}/{{token}}/activities" class="btn btn-primary">活动</a>
         </div> -->
     </div>
 </div>

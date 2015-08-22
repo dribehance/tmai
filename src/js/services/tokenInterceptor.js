@@ -1,5 +1,5 @@
 // by dribehance <dribehance.kksdapp.com>
-angular.module("Tmai").factory("tokenInterceptor", function($location, $q, errorServices, config) {
+angular.module("Tmai").factory("tokenInterceptor", function($location, $q, platformServices, errorServices, config) {
     return {
         // optional method
         'request': function(config) {
@@ -25,8 +25,9 @@ angular.module("Tmai").factory("tokenInterceptor", function($location, $q, error
             }
             // server response
             if (response.data.code == config.request.TOKEN_INVALID) {
-                console.log("TOKEN_INVALID")
+                console.log("TOKEN_INVALID");
                 // localStorageService.remove("token");
+                platformServices.notify("TOKEN_INVALID");
                 $location.path("/signin").replace();
                 return defer.promise;
             } else {
@@ -37,7 +38,7 @@ angular.module("Tmai").factory("tokenInterceptor", function($location, $q, error
         // optional method
         'responseError': function(rejection) {
             var defer = $q.defer();
-            errorServices.requestError(rejection.data,rejection.status,rejection.headers,rejection.config);
+            errorServices.requestError(rejection.data, rejection.status, rejection.headers, rejection.config);
             return defer.promise;
         }
     }

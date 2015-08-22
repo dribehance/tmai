@@ -20,8 +20,7 @@
         <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
         slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
             <div ng-repeat="banner in banners track by $index" style="min-height:150px" on-repeat-done>
-                <img ng-src="{{banner}}" class="block full-width"></img>
-                <!-- <imageview src="banner" grid="1" rate="1"></imageview> -->
+                <img ng-src="{{staticImageUrl + banner.cover}}" class="block full-width"></img>
             </div>
         </wrap-owlcarousel>
         <div class="section text-ellipsis">
