@@ -11,72 +11,72 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: indexController,
         })
-        .when('/products/:product_id', {
+        .when('/:token/products/:product_id', {
             templateUrl: 'product.html',
             reloadOnSearch: false,
             controller: productController
         })
-        .when('/wallet', {
+        .when('/:token/wallet', {
             templateUrl: 'wallet.html',
             reloadOnSearch: false,
             controller: walletController
         })
-        .when('/quan', {
+        .when('/:token/quan', {
             templateUrl: 'quan.html',
             reloadOnSearch: false,
             controller: quanController
         })
-        .when('/choose_quan/:product_id', {
+        .when('/:token/choose_quan/:product_id', {
             templateUrl: 'choose_quan.html',
             reloadOnSearch: false,
             controller: chooseQuanController
         })
-        .when('/bonus/:bonus_id', {
+        .when('/:token/bonus/:bonus_id', {
             templateUrl: 'bonus.html',
             reloadOnSearch: false,
             controller: bonusController
         })
-        .when('/money', {
+        .when('/:token/money', {
             templateUrl: 'money.html',
             reloadOnSearch: false,
             controller: moneyController
         })
-        .when('/record', {
+        .when('/:token/record', {
             templateUrl: 'record.html',
             reloadOnSearch: false,
             controller: recordController
         })
-        .when('/invite', {
+        .when('/:token/invite', {
             templateUrl: 'invite.html',
             reloadOnSearch: false,
             controller: inviteController
         })
-        .when('/about/:company_id', {
+        .when('/:token/about/:company_id', {
             templateUrl: 'about.html',
             reloadOnSearch: false,
             controller: aboutController
         })
-        .when('/activities', {
+        .when('/:token/activities', {
             templateUrl: 'activities.html',
             reloadOnSearch: false,
             controller: activitiesController
         })
-        .when('/activities/:activity_id', {
+        .when('/:token/activities/:activity_id', {
             templateUrl: 'activity.html',
             reloadOnSearch: false,
             controller: activityController
         })
-        .when('/votes/:activity_id', {
+        .when('/:token/votes/:activity_id', {
             templateUrl: 'votes.html',
             reloadOnSearch: false,
             controller: votesController
         })
-        .when('/vote/:candidate_id', {
+        .when('/:token/vote/:candidate_id', {
             templateUrl: 'vote.html',
             reloadOnSearch: false,
             controller: voteController
         })
-        .when('/vote_result/:activity_id', {
+        .when('/:token/vote_result/:activity_id', {
             templateUrl: 'vote_result.html',
             reloadOnSearch: false,
             controller: voteResultController

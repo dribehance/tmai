@@ -6,9 +6,7 @@ angular.module("Tmai").factory("appServices", function($rootScope, $routeParams,
     var routeChangeSuccess = function(e, currentRoute, prevRoute) {
         toastServices.hide();
         errorServices.hide();
-        if ($routeParams.token) {
-            $rootScope.token = $routeParams.token;
-        }
+        $rootScope.token = $routeParams.token || 'TOKEN_INVALID';
         navBarHandler(e, currentRoute, prevRoute);
     }
     var routeChangeError = function(e, currentRoute, prevRoute) {
