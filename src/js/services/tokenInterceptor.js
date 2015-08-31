@@ -28,7 +28,7 @@ angular.module("Tmai").factory("tokenInterceptor", function($location, $q, platf
                 console.log("TOKEN_INVALID");
                 // localStorageService.remove("token");
                 platformServices.notify("TOKEN_INVALID");
-                $location.path("/signin").replace();
+                $location.path("/index").replace();
                 return defer.promise;
             } else {
                 return response;

@@ -15,10 +15,13 @@
                 <div>交易金额：人民币{{record.money}}元</div>
             </div>
         </div>
-        <div class="section bg-light-grey">
+        <div class="section bg-light-grey" ng-if="records.length>0">
             <div class="section text-center" ng-click="loadMore()">
                 {{ page.message}}
             </div>
+        </div>
+        <div class="text-center" ng-if="records.length==0">
+            暂无交易记录
         </div>
     </div>
 </div>

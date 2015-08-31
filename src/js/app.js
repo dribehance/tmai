@@ -11,67 +11,72 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: indexController,
         })
-        .when('/:platform/:token/products/:product_id', {
+        .when('/products/:product_id', {
             templateUrl: 'product.html',
             reloadOnSearch: false,
             controller: productController
         })
-        .when('/:platform/:token/wallet', {
+        .when('/wallet', {
             templateUrl: 'wallet.html',
             reloadOnSearch: false,
             controller: walletController
         })
-        .when('/:platform/:token/quan', {
+        .when('/quan', {
             templateUrl: 'quan.html',
             reloadOnSearch: false,
             controller: quanController
         })
-        .when('/:platform/:token/bonus/:bonus_id', {
+        .when('/choose_quan/:product_id', {
+            templateUrl: 'choose_quan.html',
+            reloadOnSearch: false,
+            controller: chooseQuanController
+        })
+        .when('/bonus/:bonus_id', {
             templateUrl: 'bonus.html',
             reloadOnSearch: false,
             controller: bonusController
         })
-        .when('/:platform/:token/money', {
+        .when('/money', {
             templateUrl: 'money.html',
             reloadOnSearch: false,
             controller: moneyController
         })
-        .when('/:platform/:token/record', {
+        .when('/record', {
             templateUrl: 'record.html',
             reloadOnSearch: false,
             controller: recordController
         })
-        .when('/:platform/:token/invite', {
+        .when('/invite', {
             templateUrl: 'invite.html',
             reloadOnSearch: false,
             controller: inviteController
         })
-        .when('/:platform/:token/about/:company_id', {
+        .when('/about/:company_id', {
             templateUrl: 'about.html',
             reloadOnSearch: false,
             controller: aboutController
         })
-        .when('/:platform/:token/activities', {
+        .when('/activities', {
             templateUrl: 'activities.html',
             reloadOnSearch: false,
             controller: activitiesController
         })
-        .when('/:platform/:token/activities/:activity_id', {
+        .when('/activities/:activity_id', {
             templateUrl: 'activity.html',
             reloadOnSearch: false,
             controller: activityController
         })
-        .when('/:platform/:token/votes/:activity_id', {
+        .when('/votes/:activity_id', {
             templateUrl: 'votes.html',
             reloadOnSearch: false,
             controller: votesController
         })
-        .when('/:platform/:token/vote/:candidate_id', {
+        .when('/vote/:candidate_id', {
             templateUrl: 'vote.html',
             reloadOnSearch: false,
             controller: voteController
         })
-        .when('/:platform/:token/vote_result/:activity_id', {
+        .when('/vote_result/:activity_id', {
             templateUrl: 'vote_result.html',
             reloadOnSearch: false,
             controller: voteResultController
@@ -79,6 +84,8 @@ angular.module('Tmai', [
         .otherwise({
             redirectTo: "/index"
         });
+        $httpProvider.defaults.withCredentials = true;
+        delete $httpProvider.defaults.headers.common["X-Requested-With"];
         $httpProvider.interceptors.push('tokenInterceptor');   
 }).run(function(appServices){
     appServices.init();

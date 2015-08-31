@@ -8,7 +8,7 @@
     <div class="scrollable-content">
         <div class="section">
             <div class="row">
-                <a ng-href="#/{{platform}}/{{token}}/vote/{{candidate.candidate_id}}" class="block col-xs-6" ng-class="{'odd':$odd,'even':$even}" ng-repeat="candidate in candidates">
+                <a ng-href="#/vote/{{candidate.candidate_id}}" class="block col-xs-6" ng-class="{'odd':$odd,'even':$even}" ng-repeat="candidate in candidates">
                     <div class="box">
                         <imageview src="staticImageUrl + candidate.cover" grid="1" rate="1"></imageview>
                         <!-- <img ng-src="{{staticImageUrl + candidate.cover}}" alt=""> -->

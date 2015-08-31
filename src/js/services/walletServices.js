@@ -7,7 +7,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/briberyResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
-                    "token": $rootScope.token
+                    
                 })
             }).then(function(data) {
                 return data.data;
@@ -20,7 +20,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
                     "bribery_id": id,
-                    "token": $rootScope.token
+                    
                 })
             }).then(function(data) {
                 return data.data;
@@ -32,7 +32,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/myVancherResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
-                    "token": $rootScope.token
+                    
                 })
             }).then(function(data) {
                 return data.data;
@@ -44,7 +44,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/myVancherResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
-                    "token": $rootScope.token,
+                    
                     "product_id": id
                 })
             }).then(function(data) {

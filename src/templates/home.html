@@ -7,38 +7,35 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="text-center" style="font-size:100px;">I'M TMAI</div>
-        <h3>URL PATTER</h3>
-        <div>
-            产品详情：/{ios|android}/:token/products/:product_id
+        <div class="section bg-light-grey">
+            <h3>URL PATTER</h3>
+            <div>
+                产品详情：/products/:product_id <a ng-href="#/products/1">Try It</a>
+            </div>
+            <p></p>
+            <h4>我的卡包</h4>
+            <div>
+                红包列表：/wallet <a ng-href="#/wallet">Try It</a>
+            </div>
+            <div>
+                优惠券列表：/quan <a ng-href="#/quan">Try It</a>
+            </div>
+            <div>
+                选择优惠券：/choose_quan/:product_id <a ng-href="#/choose_quan/1">Try It</a>
+            </div>
+            <p></p>
+            <div>
+                活动详情：/activities/:activity_id <a ng-href="#/activities/1">Try It</a>
+            </div>
+            <div>
+                关于我们：/about/:company_id <a ng-href="#/about/1">Try It</a>
+            </div>
+            <div>
+                交易记录：/record <a ng-href="#/record">Try It</a>
+            </div>
+            <div>
+                我的佣金：/money <a ng-href="#/money">Try It</a>
+            </div>
         </div>
-        <p></p>
-        <h4>我的卡包</h4>
-        <div>
-            红包列表：/{ios|android}/:token/wallet
-        </div>
-        <div>
-            优惠券列表：/{ios|android}/:token/quan
-        </div>
-        <p></p>
-        <div>
-            活动详情：/{ios|android}/:token/activities/:activity_id
-        </div>
-        <div>
-            关于我们：/{ios|android}/:token/about/:company_id
-        </div>
-        <!-- <div class="btn-group justified">
-            <a ng-href="#/{{platform}}/{{token}}/products/1" class="btn btn-primary">商品详情</a>
-            <a ng-href="#/{{platform}}/{{token}}/wallet/" class="btn btn-primary">我的卡包</a>
-            <a ng-href="#/{{platform}}/{{token}}/money" class="btn btn-primary">我的佣金</a>
-            <a ng-href="#/{{platform}}/{{token}}/record" class="btn btn-primary">交易记录</a>
-        </div>
-        <div class="btn-group justified">
-            <a ng-href="#/{{platform}}/{{token}}/record" class="btn btn-primary">交易记录</a>
-        </div>
-        <div class="btn-group justified">
-            <a ng-href="#/{{platform}}/{{token}}/invite" class="btn btn-primary">我的邀请码</a>
-            <a ng-href="#/{{platform}}/{{token}}/about/1" class="btn btn-primary">关于我们</a>
-            <a ng-href="#/{{platform}}/{{token}}/activities" class="btn btn-primary">活动</a>
-        </div> -->
     </div>
 </div>

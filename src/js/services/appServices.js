@@ -1,7 +1,6 @@
 // EventHandle
 angular.module("Tmai").factory("appServices", function($rootScope, $routeParams, $location, $window, platformServices, errorServices, toastServices, config) {
     var routeChangeStart = function(e) {
-        alert($routeParams.token)
         // userServices.checkAuth();
     }
     var routeChangeSuccess = function(e, currentRoute, prevRoute) {
@@ -18,7 +17,7 @@ angular.module("Tmai").factory("appServices", function($rootScope, $routeParams,
     var navBarHandler = function(e, currentRoute, prevRoute) {
         // navbar top
         var path = $location.path(),
-            off_top = path.indexOf("/bonus") != -1 || path.indexOf("/money") != -1 || path.indexOf("/products/") != -1 ;
+            off_top = path.indexOf("/bonus") != -1 || path.indexOf("/money") != -1 || path.indexOf("/products/") != -1;
         if (off_top) {
             // SharedState.turnOff("navbarTop");
             $rootScope.navbar.top = false;

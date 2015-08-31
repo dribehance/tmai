@@ -47,26 +47,34 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
         },
         iosBack: function() {
             $window.connectWebViewJavascriptBridge(function(bridge) {
-                bridge.send("ios_back", function(data) {
-                    console.log("ios back");
-                });
+                bridge.callHandler("iosBack", {}, function(data) {});
             });
         },
         notify: function(message) {
             if (!this.isNative()) {
                 return;
             }
-            switch (message) {
-                case "TOKEN_INVALID":
-                    if(this.isAndroid()) {
-                        android.toLogin();
-                    }
-                    else {
-                        // ios login
-                    }
-                    break;
-                default:
-                    ;
+            alert("TOKEN_INVALID")
+            if (this.isAndroid()) {
+                android.toLogin();
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("toLogin", {}, function(data) {});
+                });
+            }
+        },
+        chooseQuan: function(quan) {
+            if (!this.isNative()) {
+                return;
+            }
+            if (this.isAndroid()) {
+                android.setyhj(quan.vancher_id, quan.money);
+            }
+            if (this.isIos()) {
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("quanAction", quan, function(data) {});
+                });
             }
         }
     }

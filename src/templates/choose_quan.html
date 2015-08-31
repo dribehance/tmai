@@ -1,0 +1,29 @@
+<!-- by dribehance <dribehance.kksdapp.com> -->
+<div ui-content-for="title">可用优惠券</div>
+<div ui-content-for="navbarAction"></div>
+<div ui-content-for="backAction">
+	<span class="btn" ng-click="back()">返回</span>
+</div>
+<div class="scrollable">
+	<div class="scrollable-content">
+		<div ng-repeat="quan in quans">
+            <div class="section" ng-click="choose(quan)">
+                <div class="semi-auto semi-left-50 semi-right-50">
+                    <div class="semi-fixed-left">
+                        <img ng-src="{{ staticImageUrl + quan.company_logo}}" style="width:40px" alt="">
+                    </div>
+                    <div class="section section-wide">
+                        {{quan.company_name}}
+                    </div>
+                    <div class="semi-fixed-right">
+                        <i class="kk kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':quan.type==0,'kk-quan':quan.type==1}">￥{{quan.money}}</i>
+                    </div>
+                </div>
+            </div>
+            <div class="kk-line kk-horizon"></div>
+        </div>
+        <div class="text-center" ng-if="quans.length==0">
+        	无可用优惠券
+        </div>
+	</div>
+</div>
