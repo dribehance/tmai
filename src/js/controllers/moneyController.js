@@ -4,7 +4,7 @@ var moneyController = function($scope, walletServices, errorServices, toastServi
     $scope.moneys = [];
     $scope.page = {
     	number:1,
-    	page_size:1,
+    	page_size:4,
     	message:"点击加载更多"
     }
     $scope.loadMore = function() {

@@ -15,7 +15,7 @@ angular.module("Tmai").factory("appServices", function($rootScope, $routeParams,
     var navBarHandler = function(e, currentRoute, prevRoute) {
         // navbar top
         var path = $location.path(),
-            off_top = path.indexOf("/bonus") != -1 || path.indexOf("/money") != -1 || path.indexOf("/products/") != -1;
+            off_top = path.indexOf("/bonus") != -1 || path.indexOf("/money") != -1 || path.indexOf("/products/") != -1 || path.indexOf("/about/") != -1;
         if (off_top) {
             // SharedState.turnOff("navbarTop");
             $rootScope.navbar.top = false;

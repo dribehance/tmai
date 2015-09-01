@@ -11,9 +11,11 @@
 		</div>
 	</div>
 	<div class="scrollable-footer">
-		<div class="section bg-grey">
-			<a ng-click="vote()" ng-if="candidate.vote != 1" class="block full-width text-white text-center">给TA投票</a>
-			<a ng-if="candidate.vote == 1" class="block full-width text-white text-center">已经投过票啦</a>
+		<div class="section bg-red" ng-if="candidate.vote != 1" >
+			<a ng-click="vote()" class="block full-width text-white text-center">给TA投票</a>
+		</div>
+		<div class="section bg-grey" ng-if="candidate.vote == 1">
+			<a class="block full-width text-white text-center">已经投过票啦</a>
 		</div>
 	</div>
 </div>

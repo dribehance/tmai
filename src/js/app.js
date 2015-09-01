@@ -4,7 +4,7 @@ angular.module('Tmai', [
     // 'LocalStorageModule'
 ])
 
-.config(function($routeProvider,$httpProvider) {
+.config(function($routeProvider, $httpProvider) {
     $routeProvider
         .when('/index', {
             templateUrl: 'home.html',
@@ -84,9 +84,12 @@ angular.module('Tmai', [
         .otherwise({
             redirectTo: "/index"
         });
-        $httpProvider.defaults.withCredentials = true;
-        delete $httpProvider.defaults.headers.common["X-Requested-With"];
-        $httpProvider.interceptors.push('tokenInterceptor');   
-}).run(function(appServices){
+    // $httpProvider.defaults.withCredentials = true;
+    // delete $httpProvider.defaults.headers.common["X-Requested-With"];
+    $httpProvider.interceptors.push('tokenInterceptor');
+}).run(function(appServices, $rootScope, $sce) {
     appServices.init();
+    $rootScope.trustAsHtml = function(safehtml) {
+        return $sce.trustAsHtml(safehtml)
+    }
 });

@@ -7,6 +7,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/briberyResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
+"token":$rootScope.token,
                     
                 })
             }).then(function(data) {
@@ -19,6 +20,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/takeBriberyResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
+"token":$rootScope.token,
                     "bribery_id": id,
                     
                 })
@@ -32,6 +34,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/myVancherResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
+"token":$rootScope.token,
                     
                 })
             }).then(function(data) {
@@ -44,6 +47,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/myVancherResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
+"token":$rootScope.token,
                     
                     "product_id": id
                 })
@@ -57,6 +61,7 @@ angular.module("Tmai").factory("walletServices", function($http, $rootScope, con
                 url: config.url + "/app/UserCenter/myCommissionResponse",
                 method: "GET",
                 params: angular.extend({}, config.common_params, {
+"token":$rootScope.token,
                     "token":$rootScope.token,
                     "pn":page.number,
                     "page_size":page.page_size

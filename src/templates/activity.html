@@ -7,7 +7,7 @@
 <div class="scrollable">
     <div class="scrollable-content">
         <div class="section">
-            {{activity.details}}
+            <div ng-bind-html="trustAsHtml(activity.details)"></div>
         </div>
     </div>
     <div class="scrollable-footer">
