@@ -17,22 +17,26 @@
 </div>
 <div class="scrollable">
     <div class="scrollable-content">
-        <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
+        <div style="min-height:600px;">
+            <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
         slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
-            <div ng-repeat="banner in banners track by $index" style="min-height:150px" on-repeat-done>
-                <img ng-src="{{staticImageUrl + banner.cover}}" class="block full-width"></img>
+            <div ng-repeat="banner in banners track by $index" class="holder" on-repeat-done>
+                <img ng-src="{{staticImageUrl + banner.cover}}"></img>
             </div>
         </wrap-owlcarousel>
-        <div class="section text-ellipsis">
+        <div class="section text-ellipsis text-large">
             {{product.title}}
         </div>
-        <div class="section section-condensed">
+        <div class="section" style="padding-top:0">
             商品价格：{{product.price | currency:"￥"}}
             <div class="text-red">佣金：{{product.commission | currency:"￥"}}</div>
         </div>
+        <div class="kk-line kk-horizon"></div>
         <div class="section multi-image-text" ng-repeat="image in images">
             <img ng-src="{{staticImageUrl + image.cover}}" alt="">
         </div>
+        </div>
+
     </div>
 	<!-- <div class="scrollable-footer">
 		<div class="section text-center">

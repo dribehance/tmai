@@ -6,7 +6,7 @@
 </div>
 <div class="scrollable">
     <div class="scrollable-content">
-        <div class="section">
+        <div class="section" ng-if="ranks.length>0">
             <div class="row" ng-repeat="rank in ranks">
                 <div class="col-xs-3">
                     {{$index+1}}.{{rank.name}}
@@ -21,7 +21,7 @@
                     {{rank.ballot}}票 {{rank.rate}}%
                 </div>
             </div>
-        </div>
         <div class="text-center section bg-light-grey">活动最终解释权归淘卖所有</div>
+        </div>
     </div>
 </div>

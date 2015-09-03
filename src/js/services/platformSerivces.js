@@ -10,6 +10,18 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
         }
     }
     return {
+        init: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            // back
+            if (this.isAndroid()) {
+                $rootScope.back = this.androidBack;
+            }
+            if (this.isIos()) {
+                $rootScope.back = this.iosBack;
+            }
+        },
         isAndroid: function() {
             var ua = $window.navigator.userAgent.toLowerCase();
             if (ua.indexOf("android") != -1) {
@@ -30,18 +42,6 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
             }
             return false;
         },
-        init: function() {
-            if (!this.isNative()) {
-                return;
-            }
-            // back
-            if (this.isAndroid()) {
-                $rootScope.back = this.androidBack;
-            }
-            if (this.isIos()) {
-                $rootScope.back = this.iosBack;
-            }
-        },
         androidBack: function() {
             android.mygoBack();
         },
@@ -54,7 +54,7 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
             if (!this.isNative()) {
                 return;
             }
-            alert("TOKEN_INVALID")
+            // alert("TOKEN_INVALID")
             if (this.isAndroid()) {
                 android.toLogin();
             }
@@ -70,10 +70,28 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
             }
             if (this.isAndroid()) {
                 android.setyhj(quan.vancher_id, quan.money);
+                return;
             }
             if (this.isIos()) {
                 $window.connectWebViewJavascriptBridge(function(bridge) {
                     bridge.callHandler("quanAction", quan, function(data) {});
+                });
+            }
+        },
+        open: function(url) {
+            if (!this.isNative()) {
+                return;
+            }
+            if (this.isAndroid()) {
+                android.open(url);
+                return;
+            }
+            if (this.isIos()) {
+                // alert(url)
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("openAction", {
+                        "url": url
+                    }, function(data) {});
                 });
             }
         }

@@ -13,7 +13,7 @@
     <div class="scrollable-footer">
         <div class="bg-grey">
             <div class="btn-group justified text-white">
-                <a ng-href="#/{{token}}/votes/{{activity.activity_id}}" class="btn text-white text-center">去投票</a>
+                <a ng-href="#/{{token}}/votes/{{activity.activity_id}}" class="btn text-white text-center" ng-if="can_vote">去投票</a>
                 <a ng-href="#/{{token}}/vote_result/{{activity.activity_id}}" class="btn text-white text-center">查看看投票结果</a>
             </div>
         </div>

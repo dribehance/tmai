@@ -9,13 +9,18 @@ angular.module("Tmai").directive('wrapOwlcarousel', function() {
                 // $el.owlCarousel();
                 var style = {
                     width:$(element).width(),
-                    height:$(element).width(),
+                    height:$(element).width()*306/227,
                     "background-image":"url('../images/default.png')",
                     "background-repeat":"no-repeat",
                     "background-position":"center center",
-                    "background-color":"#c8c8c8"
+                    "background-color":"#c8c8c8",
+                    "text-align":"center",
+                    "display":"inline-block",
+                    "vertical-align":"middle",
+                    "line-height":$(element).width()*306/227 +"px",
                 }
-                $(element).find("img").css(style);
+                $(element).find(".holder").css(style);
+                $(element).find("img").css({"max-height":"100%","max-width":"100%"});
             	$(element).owlCarousel(options);
             });
         }
