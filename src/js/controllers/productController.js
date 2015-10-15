@@ -1,7 +1,7 @@
 var productController = function($scope,$rootScope, $routeParams,platformServices, productServices, errorServices, toastServices, config) {
     $scope.defaultImage = "../images/default.png";
     toastServices.show();
-    productServices.queryById($routeParams.product_id).then(function(data) {
+    productServices.queryById($routeParams.product_id,$routeParams.pre_product_id).then(function(data) {
         toastServices.hide()
         if (data.code == config.request.SUCCESS && data.status == config.response.SUCCESS) {
             $scope.product = data.Result.product;
@@ -17,5 +17,14 @@ var productController = function($scope,$rootScope, $routeParams,platformService
             return;
         }
         errorServices.autoHide("服务器错误");
-    })
+    });
+    $scope.choose = function (){
+        platformServices.choose();
+    }
+    $scope.comment = function () {
+        platformServices.comment();
+    }
+    $scope.fiveStar = function(star) {
+        return new Array(star)
+    }
 }

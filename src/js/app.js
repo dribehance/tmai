@@ -11,7 +11,7 @@ angular.module('Tmai', [
             reloadOnSearch: false,
             controller: indexController,
         })
-        .when('/:token/products/:product_id', {
+        .when('/:token/products/:product_id/:pre_product_id', {
             templateUrl: 'product.html',
             reloadOnSearch: false,
             controller: productController

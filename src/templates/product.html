@@ -24,14 +24,28 @@
                 <img ng-src="{{staticImageUrl + banner.cover}}"></img>
             </div>
         </wrap-owlcarousel>
-        <div class="section text-ellipsis text-large">
+        <div class="section text-large">
             {{product.title}}
         </div>
         <div class="section" style="padding-top:0">
-            商品价格：{{product.price | currency:"￥"}}
+            商品价格：{{product.price | currency:"￥"}} <span class="text-red">{{product.market_price | currency:"￥"}}</span>
             <div class="text-red">佣金：{{product.commission | currency:"￥"}}</div>
         </div>
         <div class="kk-line kk-horizon"></div>
+        <div class="list-group">
+            <div class="list-group-item" ng-click="choose()">
+                规格选择：<span class="text-red">{{product.attrs}}</span>
+                <i class="text-gray-light fa fa-chevron-right pull-right"></i>
+            </div>
+            <div class="list-group-item" ng-click="comment()">
+                评论：<i class="fa fa-star text-orange" ng-repeat="s in fiveStar(product.comment_star) track by $index"></i>({{product.comment_star}}分)
+                <i class="text-gray-light fa fa-chevron-right pull-right"></i>
+            </div>
+            <div class="list-group-item" ng>
+                运费:{{product.shipping_fee}}
+                <div class="pull-right"></div>
+            </div>
+        </div>
         <div class="section multi-image-text" ng-repeat="image in images">
             <img ng-src="{{staticImageUrl + image.cover}}" alt="">
         </div>

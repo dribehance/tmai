@@ -94,6 +94,36 @@ angular.module("Tmai").factory("platformServices", function($rootScope, $window,
                     }, function(data) {});
                 });
             }
+        },
+        choose: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            if (this.isAndroid()) {
+                android.choose();
+                return;
+            }
+            if (this.isIos()) {
+                // alert(url)
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("choose", {}, function(data) {});
+                });
+            }
+        },
+        comment: function() {
+            if (!this.isNative()) {
+                return;
+            }
+            if (this.isAndroid()) {
+                android.comment();
+                return;
+            }
+            if (this.isIos()) {
+                // alert(url)
+                $window.connectWebViewJavascriptBridge(function(bridge) {
+                    bridge.callHandler("comment", {}, function(data) {});
+                });
+            }
         }
     }
 });
