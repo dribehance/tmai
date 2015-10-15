@@ -28,7 +28,7 @@
             {{product.title}}
         </div>
         <div class="section" style="padding-top:0">
-            商品价格：{{product.price | currency:"￥"}} <span class="text-red">{{product.market_price | currency:"￥"}}</span>
+            商品价格：{{product.price | currency:"￥"}} <span class="text-red" style="text-decoration: line-through;">{{product.market_price | currency:"￥"}}</span>
             <div class="text-red">佣金：{{product.commission | currency:"￥"}}</div>
         </div>
         <div class="kk-line kk-horizon"></div>
