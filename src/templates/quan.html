@@ -17,7 +17,6 @@
                 </a>
             </div>
         </div>
-
     </div>
     <div class="scrollable-content">
         <div ng-repeat="quan in quans">
@@ -26,8 +25,9 @@
                     <div class="semi-fixed-left">
                         <img ng-src="{{ staticImageUrl + quan.company_logo}}" style="width:40px" alt="">
                     </div>
-                    <div class="section section-wide">
-                        {{quan.company_name}}
+                    <div class="section section-wide section-condensed">
+                        {{quan.company_name}} 满{{quan.min_money}}元可用
+                        </br><span class="text-red">{{quan.end_time|limitTo:10}}</span>
                     </div>
                     <div class="semi-fixed-right">
                         <i class="kk kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':quan.type==0,'kk-quan':quan.type==1}">￥{{quan.money}}</i>
@@ -36,7 +36,6 @@
             </div>
             <div class="kk-line kk-horizon"></div>
         </div>
-        
         <div class="section bg-light-grey text-center" ng-if="quans_expired.length>0">
             ---- 已使用 ----
         </div>
@@ -46,11 +45,12 @@
                     <div class="semi-fixed-left">
                         <img ng-src="{{staticImageUrl + expired.company_logo}}" style="width:40px" alt="">
                     </div>
-                    <div class="section section-wide">
-                        {{expired.company_name}}
+                    <div class="section section-wide section-condensed">
+                        {{expired.company_name}}满{{expired.min_money}}元可用
+                        </br><span class="text-red">{{expired.end_time|limitTo:10}}</span>
                     </div>
                     <div class="semi-fixed-right">
-                        <i class="kk expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':quan.type==0,'kk-quan':quan.type==1}">￥{{expired.money}}</i>
+                        <i class="kk expired kk-55-38 text-center text-white text-ellipsis" style="line-height:38px" ng-class="{'kk-quan-all':expired.type==0,'kk-quan':expired.type==1}">￥{{expired.money}}</i>
                     </div>
                 </div>
             </div>
