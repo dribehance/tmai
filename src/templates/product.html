@@ -17,7 +17,7 @@
 </div>
 <div class="scrollable">
     <div class="scrollable-content">
-        <div style="min-height:600px;">
+        <div style="min-height:425px;">
             <wrap-owlcarousel class="owl-carousel" style="overflow:hidden" data-options="{autoPlay: 5000, stopOnHover: true,  
         slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
             <div ng-repeat="banner in banners track by $index" class="holder" on-repeat-done>
@@ -43,7 +43,9 @@
             </div>
             <div class="list-group-item" ng>
                 运费:{{product.shipping_fee}}
-                <div class="pull-right"></div>
+                <div class="pull-right">
+                    销量：{{product.sales_volume}}
+                </div>
             </div>
         </div>
         <div class="section multi-image-text" ng-repeat="image in images">
